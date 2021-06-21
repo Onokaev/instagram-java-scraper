@@ -119,7 +119,7 @@ public class Instagram implements AuthenticatedInsta {
 
         RequestBody formBody = new FormBody.Builder()
                 .add("username", username)
-                .add("password", password)
+                .add("enc_password", String.format("#PWD_INSTAGRAM_BROWSER:0:%d:%s", Instant.now().getEpochSecond(), password))
                 .add("queryParams", "{}")
                 .add("optIntoOneTap", "true")
                 .build();
